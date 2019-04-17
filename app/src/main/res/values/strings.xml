@@ -4,4 +4,7 @@
     <string name="tab_rb_map">map</string>
     <string name="tab_rb_edit">edit</string>
     <string name="tab_rb_collect">collect</string>
+
+    <string name="tab_begin_date">开始于\n2018.05.08</string>
+    <string name="tab_end_date">结束于\n2018.05.08</string>
 </resources>

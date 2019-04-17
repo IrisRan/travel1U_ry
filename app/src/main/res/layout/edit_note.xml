@@ -6,17 +6,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/date_view"
-        android:id="@+id/date"/>
+    <include
+        android:id="@+id/date"
+        layout="@layout/date_view" />
 
     <!--默认事件编辑器-->
     <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/last_list"
         android:layout_width="360dp"
-        android:layout_height="180dp"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:layout_below="@id/date"
+        android:longClickable="true"
         app:cardBackgroundColor="#fdffdf"
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp"
@@ -37,7 +39,7 @@
                 <RelativeLayout
                     android:id="@+id/time"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content">
                     <TextView
                         android:id="@+id/begin_time"
                         android:layout_width="156dp"
@@ -58,34 +60,37 @@
 
 
                     <!--选择事件类型(需要改正）-->
-                    <TextView
-                        android:id="@+id/type"
+                    <Button
+                        android:id="@+id/type_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:layout_below="@id/begin_time"
+                        android:background="#fdffdf"
                         android:text="请选择事件类型"
                         android:textColor="#abcb1e"
                         android:textSize="18sp"/>
 
+
                     <!--添加文字或者图片-->
                     <android.support.v7.widget.CardView
-                        android:id="@+id/add_txt"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:elevation="10dp"
                         android:layout_marginTop="10dp"
-                        android:layout_below="@id/type"
+                        android:layout_below="@id/type_btn"
                         app:cardCornerRadius="15dp"
                         app:cardBackgroundColor="#abcb1e">
 
                         <TextView
+                            android:id="@+id/add_txt"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="+"
                             android:textColor="#ffffff"
                             android:textSize="15sp"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:clickable="true"/>
 
                     </android.support.v7.widget.CardView>
 
@@ -100,7 +105,7 @@
 
     <!--点击此事件，nnn添加新事件-->
     <android.support.v7.widget.CardView
-        android:id="@+id/add_list"
+        android:id="@+id/add_list_view"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="20dp"
@@ -111,12 +116,14 @@
         app:cardBackgroundColor="#abcb1e">
 
         <TextView
+            android:id="@+id/add_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="+"
             android:textColor="#ffffff"
-            android:textSize="50sp" />
+            android:textSize="50sp"
+            android:clickable="true"/>
 
     </android.support.v7.widget.CardView>
 
@@ -124,7 +131,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/add_list"
+        android:layout_below="@id/add_list_view"
         android:layout_marginTop="20dp"
         android:text="点击添加新事件"
         android:textColor="@color/colorPrimaryDark"

@@ -10,12 +10,15 @@
         android:id="@+id/menu"/>
 
     <!--点击查看游记-->
+    <!--长按可以删除-->
     <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/note_view"
         android:layout_width="360dp"
         android:layout_height="180dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:longClickable="true"
         app:cardBackgroundColor="@color/colorPrimary"
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp"
@@ -61,8 +64,39 @@
 
 
     <!--点击此事件，添加新的到此一游-->
-    <android.support.v7.widget.CardView
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="60dp">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/add_note"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:clickable="true"
+            android:src="@drawable/add"
+            app:backgroundTint="#abcb1e" />
+    </FrameLayout>
+
+
+    <!--android.support.design.widget.FloatingActionButton
         android:id="@+id/add_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:backgroundTint="@drawable/press_btn"
+        android:layout_below="@id/note_view"
+        app:rippleColor="#5bcb1e"
+        app:borderWidth="0dp"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp" /-->
+
+    <!--android.support.v7.widget.CardView
+        android:id="@+id/add_note_view"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="20dp"
@@ -73,23 +107,25 @@
         app:cardBackgroundColor="#abcb1e">
 
         <TextView
+            android:id="@+id/add_note"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="+"
+            android:clickable="true"
             android:textColor="#ffffff"
             android:textSize="50sp"
             android:gravity="center"/>
 
-    </android.support.v7.widget.CardView>
+    </android.support.v7.widget.CardView-->
 
-    <TextView
+    <!--TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/add_note"
+        android:layout_below="@id/add_note_view"
         android:layout_marginTop="20dp"
         android:text="点击添加新的到此一游"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="16sp"/>
+        android:textSize="16sp"/-->
 
 </RelativeLayout>

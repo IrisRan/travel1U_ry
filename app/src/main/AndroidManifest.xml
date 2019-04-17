@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.actions"
-            android:resource="@xml/select_date" />
+            android:resource="@xml/popwindow_exit" />
 
         <activity android:name=".MainActivity">
             <intent-filter>

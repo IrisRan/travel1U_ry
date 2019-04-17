@@ -1,0 +1,98 @@
+<html>
+<meta charset="utf-8">
+<link rel='stylesheet'  href='../css/jquery-jvectormap.css' type='text/css' media='all' charset="utf-8" />
+<link rel='stylesheet'  href='../css/jquery-ui.css' type='text/css' media='all' charset="utf-8" />
+<script type='text/javascript' src='../js/jquery-1.8.2.js' charset="utf-8"></script>
+<script type='text/javascript' src='../js/jquery-ui.js' charset="utf-8"></script>
+<script type='text/javascript' src='../js/jquery.jvectormap.min.js' charset="utf-8"></script>
+<script type='text/javascript' src='../js/jquery-jvectormap.js' charset="utf-8"></script>
+<script type='text/javascript' src='../js/jquery-jvectormap-world-mill-en.js' charset="utf-8"></script>
+<script type='text/javascript' src='../js/region.js' charset="utf-8"></script>
+<script type="text/javascript" src="../js/jquery-mousewheel.js"></script>
+<script type="text/javascript" src="../js/abstract-element.js"></script>
+<script type="text/javascript" src="../js/abstract-canvas-element.js"></script>
+<script type="text/javascript" src="../js/abstract-shape-element.js"></script>
+<script type="text/javascript" src="../js/svg-element.js"></script>
+<script type="text/javascript" src="../js/svg-group-element.js"></script>
+<script type="text/javascript" src="../js/svg-canvas-element.js"></script>
+<script type="text/javascript" src="../js/svg-shape-element.js"></script>
+<script type="text/javascript" src="../js/svg-path-element.js"></script>
+<script type="text/javascript" src="../js/svg-circle-element.js"></script>
+<script type="text/javascript" src="../js/vml-element.js"></script>
+<script type="text/javascript" src="../js/vml-group-element.js"></script>
+<script type="text/javascript" src="../js/vml-canvas-element.js"></script>
+<script type="text/javascript" src="../js/vml-shape-element.js"></script>
+<script type="text/javascript" src="../js/vml-path-element.js"></script>
+<script type="text/javascript" src="../js/vml-circle-element.js"></script>
+<script type="text/javascript" src="../js/vector-canvas.js"></script>
+<script type="text/javascript" src="../js/simple-scale.js"></script>
+<script type="text/javascript" src="../js/numeric-scale.js"></script>
+<script type="text/javascript" src="../js/ordinal-scale.js"></script>
+<script type="text/javascript" src="../js/color-scale.js"></script>
+<script type="text/javascript" src="../js/data-series.js"></script>
+<script type="text/javascript" src="../js/proj.js"></script>
+
+<script>
+$(function () {
+var map;
+var visitorsData = {
+"SA": 400, //Saudi Arabia
+"CA": 1000, //Canada
+"DE": 500, //Germany
+"FR": 760, //France
+"CN": 300, //China
+"AU": 700, //Australia
+"BR": 600, //Brazil
+"IN": 800, //India
+"GB": 320, //Great Britain
+"RU": 3000 //Russia
+};
+map = new jvm.Map({
+map: 'world_mill_en',
+container: $('#world-map'),
+backgroundColor: "transparent",
+regionStyle: {
+initial: {
+fill: '#e4e4e4',
+"fill-opacity": 1,
+stroke: 'white',
+"stroke-width": 1,
+"stroke-opacity": 1
+}
+},
+series: {
+      regions: [{
+        scale: ['#C8EEFF', '#0071A4'],
+        attribute: 'fill',
+        normalizeFunction: 'polynomial'
+
+      }]
+    },
+onRegionClick: function(event, code){
+$( "#dialog-confirm" ).dialog({
+resizable: false,
+height:140,
+modal: true,
+buttons: {
+"去过": function() {
+var josnStr = "{" + code + ":'2'}";
+map.series.regions[0].setValues(eval('(' + josnStr + ')'));
+ $( this ).dialog( "close" );
+ },
+"想去": function() {
+var josnStr = "{" + [map.regions[code]. + getRegionName + "}";
+map.addMarker(code,lan,2,2);
+$( this ).dialog( "close" );
+}
+}
+});
+},
+});
+});
+</script>
+
+<div id="world-map" style="height: 400px; width: 100%;"></div>
+    <div id="dialog-confirm" title="请选择标记形式">
+</div>
+
+</html>
