@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="action_view_1" type="id">action_view_1</item>
+    <item name="action_view_2" type="id">action_view_2</item>
+    <item name="action_view_3" type="id">action_view_3</item>
+    <item name="action_view_4" type="id">action_view_4</item>
+    <item name="action_view_5" type="id">action_view_5</item>
+
+</resources>
